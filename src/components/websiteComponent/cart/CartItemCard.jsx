@@ -2,7 +2,6 @@
 
 import { Trash2 } from "lucide-react";
 
-import Price from "../ui/Price";
 import QuantityButton from "./QuantityButton";
 import { useDispatch } from "react-redux";
 import { removeFromcart } from "@/redux/features/cartSlice";
@@ -39,20 +38,20 @@ export default function CartItemCard({ item }) {
             relative
             h-20
             w-20
-            sm:h-24
-            sm:w-24
-            md:h-28
-            md:w-28
             shrink-0
             overflow-hidden
             rounded-lg
             bg-[#F7F4EF]
+            sm:h-24
+            sm:w-24
+            md:h-28
+            md:w-28
           "
         >
           <img
             src={item.thumbnail}
             alt={item.name}
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
           />
         </div>
 
@@ -60,8 +59,8 @@ export default function CartItemCard({ item }) {
         <div
           className="
             flex
-            flex-1
             min-w-0
+            flex-1
             flex-col
             gap-1.5
           "
@@ -70,43 +69,73 @@ export default function CartItemCard({ item }) {
           <div
             className="
               flex
+              min-w-0
               items-start
               justify-between
               gap-2
-              min-w-0
             "
           >
+            {/* PRODUCT NAME */}
             <h2
               className="
                 min-w-0
                 flex-1
                 line-clamp-2
                 text-xs
-                sm:text-sm
-                md:text-base
                 font-semibold
                 leading-tight
                 text-[#2c2016]
+                sm:text-sm
+                md:text-base
               "
             >
               {item.name}
             </h2>
 
-            <div className="shrink-0 text-xs sm:text-sm">
-              <Price
-                price={item.salePrice * item.qty}
-                oldPrice={item.originalPrice * item.qty}
-              />
+            {/* PRICE */}
+            <div
+              className="
+                shrink-0
+                text-right
+                leading-tight
+              "
+            >
+              {/* MRP */}
+              {item.originalPrice && (
+                <p
+                  className="
+                    text-[10px]
+                    font-medium
+                    text-gray-400
+                    line-through
+                    sm:text-xs
+                  "
+                >
+                  ₹{item.originalPrice * item.qty}
+                </p>
+              )}
+
+              {/* SALE PRICE */}
+              <p
+                className="
+                  text-xs
+                  font-semibold
+                  text-[#2c2016]
+                  sm:text-sm
+                "
+              >
+                ₹{item.salePrice * item.qty}
+              </p>
             </div>
           </div>
 
           {/* DESCRIPTION */}
           <p
             className="
-              text-[10px]
-              sm:text-[11px]
-              text-gray-500
               line-clamp-1
+              text-[10px]
+              text-gray-500
+              sm:text-[11px]
             "
           >
             Best Product
@@ -120,8 +149,8 @@ export default function CartItemCard({ item }) {
               items-center
               gap-x-2
               text-[10px]
-              sm:text-[11px]
               text-gray-500
+              sm:text-[11px]
             "
           >
             <span>
@@ -143,6 +172,7 @@ export default function CartItemCard({ item }) {
               pt-1
             "
           >
+            {/* QUANTITY */}
             <div className="scale-[0.85] origin-left sm:scale-100">
               <QuantityButton
                 id={item.id}
@@ -150,24 +180,25 @@ export default function CartItemCard({ item }) {
               />
             </div>
 
+            {/* DELETE */}
             <button
               onClick={() => onDelete(item.id)}
               className="
+                flex
                 h-7
                 w-7
-                sm:h-8
-                sm:w-8
                 shrink-0
+                cursor-pointer
+                items-center
+                justify-center
                 rounded-lg
                 border
                 border-[#E8DED5]
-                flex
-                items-center
-                justify-center
-                cursor-pointer
                 transition
                 hover:bg-[#2c2016]
                 hover:text-white
+                sm:h-8
+                sm:w-8
               "
             >
               <Trash2 size={13} />
