@@ -40,9 +40,13 @@ useEffect(() => {
   ];
 
  async function Logoutuser(){
-     await axiosCat.get("/user/logout")
+    try {
+       await axiosCat.get("/user/logout")
      dispatcher(emptycart())
       router.refresh()
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
