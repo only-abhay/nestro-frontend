@@ -134,7 +134,7 @@ export default function OrderRow({
         >
 
           ₹
-          {product.price.toLocaleString()}
+          { product.qty * product.price.toLocaleString()}
 
         </div>
 
