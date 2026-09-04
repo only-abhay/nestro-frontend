@@ -11,10 +11,11 @@ export default function AuthLeftPanel() {
   return (
     <div
       className="
+      hidden
+      lg:flex
       h-screen
         w-[42%]
         bg-[#1F1A17]
-        flex
         flex-col
         justify-center
         items-center

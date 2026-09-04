@@ -12,8 +12,8 @@ export default function AuthLayouti() {
     useState("signin");
 
   return (
-    <div className="flex min-h-[calc(100vh-58px)]">
-      <AuthLeftPanel />
+    <div className=" flex min-h-[calc(100vh-58px)]">
+        <AuthLeftPanel />
 
       <div
         className="
