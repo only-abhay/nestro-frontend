@@ -86,7 +86,7 @@ export default function OrderSummary({ items }) {
           Total
         </span>
 
-        <span className="text-3xl font-bold text-[#2c2016]">
+        <span className="text-2xl font-bold text-[#2c2016]">
           ₹{total}
         </span>
 
