@@ -6,17 +6,12 @@ export const GetProfile = async () => {
     const cookieStore = await cookies();
 
     const token = cookieStore.get("jwt")?.value;
-    if(!token){
-      return{
-    user : []
-    
-      }
 
-    }
-
-    // User login nahi hai
     if (!token) {
-      return null;
+      return {
+        success: false,
+        user: null,
+      };
     }
 
     const response = await axiosCat.get("/user/get-me", {
@@ -24,17 +19,24 @@ export const GetProfile = async () => {
         Authorization: `Bearer ${token}`,
       },
     });
-    if (response.data.success) {
+
+    if (response.data?.success) {
       return {
         user: response.data.user,
-        success: response.data.success,
-      }
+        success: true,
+      };
     }
 
-    return null;
+    return {
+      success: false,
+      user: null,
+    };
   } catch (error) {
     console.error("Error fetching profile:", error);
 
-    return null;
+    return {
+      success: false,
+      user: null,
+    };
   }
 };
