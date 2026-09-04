@@ -43,7 +43,7 @@ export default function PlaceOrderButton({
 
   useEffect(()=>{
   if(socket == null){
-     const newSocket = io('http://localhost:5000');
+     const newSocket = io('https://nestro-backend-5ghj.onrender.com');
   setSocket(newSocket);
   }
 },
@@ -100,9 +100,9 @@ function  GetOrderDetailOnAdmin(orderId){
 
           idempotencyKeyRef.current = null;
         } else {
-          const { order_id, razorpay_order_id } = response.data;
+          const { order_id, razorpay_order_id , amount } = response.data;
 
-          razorpaypopup(razorpay_order_id, order_id);
+          razorpaypopup(razorpay_order_id, order_id , amount);
         }
       }
     } catch (error) {
@@ -112,11 +112,13 @@ function  GetOrderDetailOnAdmin(orderId){
     }
   };
 
-  const razorpaypopup = (razorpay_order_id, order_id) => {
+  const razorpaypopup = (razorpay_order_id, order_id, amount) => {
     try {
       const options = {
         key: process.env.NEXT_PUBLIC_ROZARPAY_KEY_ID,
-
+            
+        amount: amount * 100,
+        
         currency: "INR",
 
         name: "Nestro",
