@@ -9,7 +9,7 @@ import {
 
 import ProductPrice from "./ProductPrice";
 import ProductBadges from "./ProductBadges";
-import QuantitySelector from "./QuantitySelector";
+import AddCartButton from "./AddTocart";
 
 
 export default function ProductInfo({
@@ -295,7 +295,7 @@ export default function ProductInfo({
 
       {/* Quantity */}
 
-      <QuantitySelector />
+   <AddCartButton product={product} />
 
 
 

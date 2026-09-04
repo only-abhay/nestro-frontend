@@ -1,53 +1,40 @@
 "use client";
 
-import {
-  Minus,
-  Plus
-} from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 
-import {
-  useState
-} from "react";
+import { useState } from "react";
+import { decreaseqty, IncreaseQty } from "@/redux/features/cartSlice";
+ import { useDispatch } from "react-redux";
 
-
-export default function QuantitySelector() {
-
-
-  const [quantity,setQuantity] = useState(1);
-
+export default function QuantitySelector({id}) {
+  const [quantity, setQuantity] = useState(1);
+      const dispatcher = useDispatch();
 
 
   const decrease = () => {
-
-    setQuantity((prev)=> 
-      prev > 1 
-      ? prev - 1 
-      : prev
+     dispatcher(
+      decreaseqty({
+        id,
+      })
     );
-
+    setQuantity((prev) => (prev > 1 ? prev - 1 : prev));
   };
-
-
 
   const increase = () => {
-
-    setQuantity((prev)=> prev + 1);
-
+     dispatcher(
+      IncreaseQty({
+        id,
+      })
+    );
+    setQuantity((prev) => prev + 1);
   };
 
-
-
-
-
   return (
-
     <div
       className="
       space-y-3
       "
     >
-
-
       {/* Label */}
 
       <p
@@ -59,10 +46,6 @@ export default function QuantitySelector() {
       >
         Quantity
       </p>
-
-
-
-
 
       {/* Selector */}
 
@@ -81,21 +64,13 @@ export default function QuantitySelector() {
         hover:shadow-md
         "
       >
-
-
-
         {/* Minus Button */}
 
         <button
-
           type="button"
-
           onClick={decrease}
-
-          disabled={quantity===1}
-
+          disabled={quantity === 1}
           aria-label="Decrease quantity"
-
           className="
           h-12
           w-12
@@ -120,21 +95,9 @@ export default function QuantitySelector() {
           disabled:
           opacity-40
           "
-
         >
-
-          <Minus
-            size={18}
-            strokeWidth={2.5}
-          />
-
+          <Minus size={18} strokeWidth={2.5} />
         </button>
-
-
-
-
-
-
 
         {/* Quantity */}
 
@@ -155,7 +118,6 @@ export default function QuantitySelector() {
 
           "
         >
-
           <span
             key={quantity}
             className="
@@ -170,26 +132,14 @@ export default function QuantitySelector() {
           >
             {quantity}
           </span>
-
-
         </div>
-
-
-
-
-
-
 
         {/* Plus Button */}
 
         <button
-
           type="button"
-
           onClick={increase}
-
           aria-label="Increase quantity"
-
           className="
           h-12
           w-12
@@ -208,24 +158,10 @@ export default function QuantitySelector() {
 
           active:scale-90
           "
-
         >
-
-          <Plus
-            size={18}
-            strokeWidth={2.5}
-          />
-
+          <Plus size={18} strokeWidth={2.5} />
         </button>
-
-
-
-
       </div>
-
-
     </div>
-
-  )
-
+  );
 }
