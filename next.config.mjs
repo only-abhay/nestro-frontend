@@ -9,7 +9,14 @@ images:{
       },
     ],
 },
-
+async rewrites() {
+  return [
+    {
+      source: "/api/:path*",
+      destination: `${process.env.NEXT_PUBLIC_CATEGORY_URL}/:path*`,
+    },
+  ];
+},
 };
 
 export default nextConfig;
