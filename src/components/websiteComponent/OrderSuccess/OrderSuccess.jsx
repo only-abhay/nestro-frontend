@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import {
   CheckCircle2,
   Package,
@@ -12,10 +11,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-export default function OrderSuccessContent() {
-  const searchParams = useSearchParams();
-  const orderId = searchParams.get("orderId") || "N/A";
-
+export default function OrderSuccessContent({ orderId }) {
   const [copied, setCopied] = useState(false);
 
   const copyOrderId = async () => {
@@ -35,11 +31,13 @@ export default function OrderSuccessContent() {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-violet-50 flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-2xl">
         <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl">
+          
           {/* Background Decoration */}
           <div className="absolute -top-28 -right-28 h-56 w-56 rounded-full bg-green-100 blur-3xl opacity-70" />
           <div className="absolute -bottom-28 -left-28 h-56 w-56 rounded-full bg-violet-100 blur-3xl opacity-70" />
 
           <div className="relative p-8 md:p-12">
+
             {/* Success Icon */}
             <div className="flex justify-center">
               <div className="flex h-24 w-24 items-center justify-center rounded-full bg-green-100">
@@ -112,6 +110,7 @@ export default function OrderSuccessContent() {
                 Continue Shopping
               </Link>
             </div>
+
           </div>
         </div>
       </div>
