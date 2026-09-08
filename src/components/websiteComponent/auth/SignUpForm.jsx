@@ -113,8 +113,6 @@ export default function SignUpForm({ switchToSignin }) {
 
 
     try{
-
-
       await axiosCat.post(
         "/user/register",
         form
