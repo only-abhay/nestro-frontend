@@ -17,6 +17,7 @@ export default function OtpVerificationContent() {
 
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const [loading, setLoading] = useState(false);
+  const [resending, setResending] = useState(false);
 
   // OTP input change
   const handleChange = (e, index) => {
@@ -83,6 +84,27 @@ export default function OtpVerificationContent() {
       );
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleResendOtp = async () => {
+    if (!email || resending) {
+      if (!email) toast.error("Email is missing");
+      return;
+    }
+
+    try {
+      setResending(true);
+      const res = await axiosCat.post("/user/resend-otp", { email });
+      setOtp(["", "", "", "", "", ""]);
+      toast.success(res?.data?.message || "OTP resent successfully");
+      inputs.current[0]?.focus();
+    } catch (error) {
+      toast.error(
+        error?.response?.data?.message || "Could not resend OTP"
+      );
+    } finally {
+      setResending(false);
     }
   };
 
@@ -159,7 +181,7 @@ export default function OtpVerificationContent() {
             max-w-[280px]
           "
         >
-          We've sent a secure verification code to
+          We&apos;ve sent a secure verification code to
           your registered email address.
         </p>
       </div>
@@ -291,18 +313,22 @@ export default function OtpVerificationContent() {
           {/* RESEND */}
           <div className="text-center mt-7">
             <p className="text-[#8B8680] text-sm">
-              Didn't receive the code?
+              Didn&apos;t receive the code?
             </p>
 
             <button
               type="button"
+              onClick={handleResendOtp}
+              disabled={resending}
               className="
                 mt-2
                 text-[#8B5E3C]
                 font-medium
+                disabled:opacity-50
+                disabled:cursor-not-allowed
               "
             >
-              Resend Code
+              {resending ? "Resending..." : "Resend Code"}
             </button>
           </div>
 
