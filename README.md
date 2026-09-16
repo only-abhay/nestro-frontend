@@ -1,36 +1,171 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Workspace — Frontend
 
-## Getting Started
+AI Workspace is an AI-powered web application that provides tools for **AI Blog Generation** and **Resume-based Interview Q&A**. The frontend is built with Next.js and provides a responsive workspace for users to generate, manage, and download AI-generated content.
 
-First, run the development server:
+## 🚀 Live Demo
+
+[AI Workspace](https://ai-assistant-frontend-alpha.vercel.app/)
+
+## 📂 Backend Repository
+
+[AI Workspace Backend](https://github.com/only-abhay/AI-Assistant-backend)
+
+## ✨ Features
+
+* User registration and login
+* OTP-based email verification
+* Protected routes
+* AI Blog Generator
+* Resume Q&A Generator
+* Resume upload with Job Description
+* Blog and Resume history
+* Free and Unlimited plans
+* Razorpay payment integration
+* Download generated blogs and resume Q&A
+* Responsive UI
+* Toast notifications
+* User authentication using cookies/JWT
+
+## 🤖 AI Features
+
+### AI Blog Generator
+
+Users can provide:
+
+* Blog title
+* Keywords
+* Description
+
+The application generates a complete blog using the **Groq API**.
+
+### Resume Q&A Generator
+
+Users can upload their resume and provide a job description.
+
+The application analyzes the resume and job description and generates interview questions and answers using **Google Gemini**.
+
+## 💳 Plans
+
+### Free Plan
+
+* Up to 10 blog generations
+* Resume Q&A generation
+* Usage limit management
+
+### Unlimited Plan
+
+* Unlimited blog generation
+* Resume Q&A generation
+* Razorpay-powered payment
+
+## 🛠️ Tech Stack
+
+* Next.js
+* React.js
+* JavaScript
+* Tailwind CSS
+* Axios
+* Redux Toolkit
+* Sonner
+* Lucide React
+* Razorpay
+* HTML2PDF
+
+## 📁 Project Structure
+
+```text
+src/
+├── app/
+├── components/
+├── services/
+├── redux/
+├── hooks/
+└── utils/
+```
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/only-abhay/AI-Assistant-frontend.git
+```
+
+Go to the project directory:
+
+```bash
+cd AI-Assistant-frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env.local` file:
+
+```env
+NEXT_PUBLIC_API_URL=your_backend_url
+NEXT_PUBLIC_ROZARPAY_KEY_ID=your_razorpay_key
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will run on:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔐 Authentication
 
-## Learn More
+The frontend communicates with the backend for:
 
-To learn more about Next.js, take a look at the following resources:
+* Registration
+* Login
+* OTP verification
+* Logout
+* Protected user data
+* Authentication state
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Authentication is handled using JWT-based cookies.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💰 Payment Integration
 
-## Deploy on Vercel
+Razorpay is integrated for purchasing the Unlimited plan.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The frontend:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Requests a Razorpay order from the backend.
+2. Opens the Razorpay checkout.
+3. Receives the payment response.
+4. Sends payment details to the backend for verification.
+5. Updates the user's plan after successful verification.
+
+## 📱 Responsive Design
+
+The application is designed to work across:
+
+* Desktop
+* Tablet
+* Mobile
+
+## 🔮 Future Improvements
+
+* More AI tools
+* Advanced resume analysis
+* AI-powered cover letter generation
+* More subscription plans
+* Improved dashboard analytics
+* Export options for additional formats
+
+## 👨‍💻 Author
+
+**Abhay Shaw**
+
+Full Stack Developer
