@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
           <div className="flex flex-1 flex-col min-w-0">
             <Header />
 
-            <main className="flex-1 overflow-x-hidden p-4 sm:p-6">
+            <main className="min-w-0 flex-1 overflow-x-hidden p-3 sm:p-5 lg:p-6">
               {children}
             </main>
           </div>

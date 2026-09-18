@@ -65,12 +65,12 @@ export default function Page() {
 };
 
   return (
-    <div className="min-h-screen bg-slate-100 p-6">
+    <div className="min-h-screen bg-slate-100 p-3 sm:p-6">
 
       {/* HEADER */}
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-slate-800">
+          <h1 className="text-2xl font-bold text-slate-800 sm:text-3xl">
             Update Product Images
           </h1>
           <p className="text-slate-500 mt-1">
@@ -90,11 +90,11 @@ export default function Page() {
       {/* CARD */}
       <form
         onSubmit={handleSubmit}
-        className="bg-white rounded-3xl shadow-sm p-6"
+        className="rounded-3xl bg-white p-4 shadow-sm sm:p-6"
       >
 
         {/* UPLOAD BOX */}
-        <div className="border-2 border-dashed border-slate-300 rounded-2xl p-8 text-center mb-6 hover:border-indigo-400 transition">
+        <div className="mb-6 rounded-2xl border-2 border-dashed border-slate-300 p-5 text-center transition hover:border-indigo-400 sm:p-8">
 
           <UploadCloud className="mx-auto text-slate-400" size={40} />
 
@@ -106,7 +106,7 @@ export default function Page() {
             type="file"
             multiple
             onChange={handleImageChange}
-            className="mt-4 block mx-auto"
+            className="mx-auto mt-4 block max-w-full text-sm"
           />
         </div>
 
@@ -123,6 +123,7 @@ export default function Page() {
 
                   <img
                     src={URL.createObjectURL(img)}
+                    alt={`New product image ${i + 1}`}
                     className="h-28 w-full object-cover rounded-xl border"
                   />
 

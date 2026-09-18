@@ -13,12 +13,12 @@ export default async function MaterialTable() {
   const inactiveData = material.filter((item) => item.status === false);
 
   return (
-    <div className="min-h-screen bg-slate-100 p-6">
+    <div className="min-h-screen bg-slate-100 p-3 sm:p-6">
 
       {/* Header */}
       <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-slate-800">
+          <h1 className="          text-2xl font-bold text-slate-800 sm:text-3xl">
             Material Types
           </h1>
           <p className="mt-1 text-slate-500">
@@ -34,21 +34,21 @@ export default async function MaterialTable() {
 
       {/* Stats */}
       <div className="mb-8 grid gap-6 md:grid-cols-3">
-        <div className="rounded-3xl bg-white p-6 shadow-sm">
+        <div className="rounded-3xl bg-white p-4 shadow-sm sm:p-6">
           <p className="text-sm text-slate-500">Total</p>
           <h2 className="mt-2 text-4xl font-bold">
             {material.length}
           </h2>
         </div>
 
-        <div className="rounded-3xl bg-white p-6 shadow-sm border border-green-100">
+        <div className="rounded-3xl bg-white p-4 shadow-sm border border-green-100 sm:p-6">
           <p className="text-sm text-slate-500">Active</p>
           <h2 className="mt-2 text-4xl font-bold text-green-600">
             {activeData.length}
           </h2>
         </div>
 
-        <div className="rounded-3xl bg-white p-6 shadow-sm border border-red-100">
+        <div className="rounded-3xl bg-white p-4 shadow-sm border border-red-100 sm:p-6">
           <p className="text-sm text-slate-500">Inactive</p>
           <h2 className="mt-2 text-4xl font-bold text-red-500">
             {inactiveData.length}
@@ -68,7 +68,7 @@ export default async function MaterialTable() {
           />
         </div>
 
-        <select className="rounded-xl border px-5 py-3 outline-none focus:border-indigo-500">
+        <select className="w-full rounded-xl border px-5 py-3 outline-none focus:border-indigo-500 md:w-auto">
           <option value="">All Status</option>
           <option value="true">Active</option>
           <option value="false">Inactive</option>
@@ -78,7 +78,7 @@ export default async function MaterialTable() {
       {/* Table */}
       <div className="overflow-hidden rounded-3xl border bg-white shadow-sm">
         <div className="overflow-x-auto">
-          <table className="w-full">
+          <table className="w-full min-w-[720px]">
 
             <thead className="bg-slate-50">
               <tr>

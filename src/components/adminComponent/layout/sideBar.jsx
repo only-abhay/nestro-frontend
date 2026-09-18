@@ -110,7 +110,7 @@ export default function Sidebar() {
         className="
           fixed
           left-4
-          top-7
+          top-3
           z-[60]
           flex
           h-10
@@ -202,7 +202,7 @@ export default function Sidebar() {
           </button>
         </div>
 
-        <div className="py-5  h-[calc(100vh-92px)]">
+        <div         className="h-[calc(100vh-92px)] overflow-y-auto py-5">
           {menuSections.map((section) => (
             <div key={section.title} className="mb-8">
               {!collapsed && (

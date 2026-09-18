@@ -211,7 +211,7 @@ const handleSubmit = async (e) => {
     <div className="space-y-6 lg:col-span-2">
 
       {/* Basic Info */}
-      <div className="rounded-3xl bg-white p-6 shadow-sm">
+      <div className="rounded-3xl bg-white p-4 shadow-sm sm:p-6">
 
         <h2 className="mb-6 text-xl font-semibold">
           Basic Information
@@ -338,7 +338,7 @@ const handleSubmit = async (e) => {
       </div>
 
       {/* Pricing */}
-      <div className="rounded-3xl bg-white p-6 shadow-sm">
+      <div className="rounded-3xl bg-white p-4 shadow-sm sm:p-6">
 
         <h2 className="mb-6 text-xl font-semibold">
           Pricing
@@ -379,7 +379,7 @@ const handleSubmit = async (e) => {
       </div>
 
       {/* Dimensions */}
-      <div className="rounded-3xl bg-white p-6 shadow-sm">
+      <div className="rounded-3xl bg-white p-4 shadow-sm sm:p-6">
 
         <h2 className="mb-6 text-xl font-semibold">
           Dimensions
@@ -428,7 +428,7 @@ const handleSubmit = async (e) => {
       </div>
 
       {/* Description */}
-      <div className="rounded-3xl bg-white p-6 shadow-sm">
+      <div className="rounded-3xl bg-white p-4 shadow-sm sm:p-6">
 
         <h2 className="mb-6 text-xl font-semibold">
           Description
@@ -458,7 +458,7 @@ const handleSubmit = async (e) => {
     <div className="space-y-6">
 
       {/* Thumbnail */}
-      <div className="rounded-3xl bg-white p-6 shadow-sm">
+      <div className="rounded-3xl bg-white p-4 shadow-sm sm:p-6">
 
         <h2 className="mb-4 text-lg font-semibold">
           Thumbnail

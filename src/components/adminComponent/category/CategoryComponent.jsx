@@ -14,12 +14,12 @@ const activedata = categories.filter((cat)=>{ return cat.status == true})
 const deactivateData = categories.filter((cat)=>{ return cat.status == false})
 
   return (
-  <div className="min-h-screen bg-slate-100 p-6">
+  <div className="min-h-screen bg-slate-100 p-3 sm:p-6">
 
   {/* Header */}
   <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
     <div>
-      <h1 className="text-3xl font-bold text-slate-800">
+      <h1 className="text-2xl font-bold text-slate-800 sm:text-3xl">
         Categories
       </h1>
 
@@ -37,7 +37,7 @@ const deactivateData = categories.filter((cat)=>{ return cat.status == false})
   {/* Stats */}
   <div className="mb-8 grid gap-6 md:grid-cols-3">
 
-    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
       <p className="text-sm text-slate-500">
         Total Categories
       </p>
@@ -47,7 +47,7 @@ const deactivateData = categories.filter((cat)=>{ return cat.status == false})
       </h2>
     </div>
 
-    <div className="rounded-3xl border border-green-100 bg-white p-6 shadow-sm">
+    <div className="rounded-3xl border border-green-100 bg-white p-4 shadow-sm sm:p-6">
       <p className="text-sm text-slate-500">
         Active Categories
       </p>
@@ -57,7 +57,7 @@ const deactivateData = categories.filter((cat)=>{ return cat.status == false})
       </h2>
     </div>
 
-    <div className="rounded-3xl border border-red-100 bg-white p-6 shadow-sm">
+    <div className="rounded-3xl border border-red-100 bg-white p-4 shadow-sm sm:p-6">
       <p className="text-sm text-slate-500">
         Inactive Categories
       </p>
@@ -87,7 +87,7 @@ const deactivateData = categories.filter((cat)=>{ return cat.status == false})
 
     </div>
 
-    <select className="rounded-xl border border-slate-200 px-5 py-3 outline-none transition focus:border-indigo-500">
+    <select className="w-full rounded-xl border border-slate-200 px-5 py-3 outline-none transition focus:border-indigo-500 md:w-auto">
       <option>All Status</option>
       <option>Active</option>
       <option>Inactive</option>

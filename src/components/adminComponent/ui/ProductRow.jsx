@@ -132,7 +132,7 @@ export default function ProductRow({ item, index }) {
   <tr className="bg-slate-50">
     <td colSpan={5} className="p-6">
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-6">
+      <div className="rounded-3xl border border-slate-200 bg-white p-4 sm:p-6">
 
         <h3 className="mb-6 text-lg font-semibold text-slate-800">
           Product Details

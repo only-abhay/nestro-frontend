@@ -9,12 +9,12 @@ export default async function ProductTable() {
   const inactiveData = Product.filter((p) => p.status === false);
 
   return (
-    <div className="min-h-screen bg-slate-100 p-6">
+    <div className="min-h-screen bg-slate-100 p-3 sm:p-6">
 
       {/* HEADER */}
-      <div className="mb-8 flex justify-between items-center">
+      <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:mb-8 sm:flex-row sm:items-center">
         <div>
-          <h1 className="text-3xl font-bold">Products</h1>
+          <h1 className="text-2xl font-bold sm:text-3xl">Products</h1>
           <p className="text-slate-500">Manage all products</p>
         </div>
 
@@ -50,7 +50,8 @@ export default async function ProductTable() {
       </div>
 
       {/* TABLE */}
-      <table className="w-full bg-white rounded-3xl overflow-hidden">
+      <div className="overflow-x-auto rounded-3xl bg-white shadow-sm">
+      <table className="w-full min-w-[720px] overflow-hidden">
 
         <thead className="bg-slate-50">
           <tr>
@@ -73,6 +74,7 @@ export default async function ProductTable() {
         </tbody>
 
       </table>
+      </div>
 
     </div>
   );
