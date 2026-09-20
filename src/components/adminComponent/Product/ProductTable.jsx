@@ -9,7 +9,7 @@ export default async function ProductTable() {
   const inactiveData = Product.filter((p) => p.status === false);
 
   return (
-    <div className="min-h-screen bg-slate-100 p-3 sm:p-6">
+    <div className="min-h-screen w-full max-w-full min-w-0 bg-slate-100 p-3 sm:p-6">
 
       {/* HEADER */}
       <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:mb-8 sm:flex-row sm:items-center">

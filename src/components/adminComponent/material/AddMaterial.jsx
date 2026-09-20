@@ -78,7 +78,7 @@ export default function AddMaterial() {
   );
 }
   return (
-    <div className="min-h-screen bg-[#F8F6F2] p-4 sm:p-6">
+    <div className="min-h-screen w-full max-w-full min-w-0 bg-[#F8F6F2] p-4 sm:p-6">
       <div className="mx-auto max-w-4xl">
         {/* Header */}
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

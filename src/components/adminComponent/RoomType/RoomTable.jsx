@@ -15,7 +15,7 @@ const activedata = Room.filter((cat)=>{ return cat.status == true})
 const deactivateData = Room.filter((cat)=>{ return cat.status == false})
 
   return (
-  <div className="min-h-screen bg-slate-100 p-3 sm:p-6">
+  <div className="min-h-screen w-full max-w-full min-w-0 bg-slate-100 p-3 sm:p-6">
   {/* Header */}
   <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
     <div>
@@ -94,7 +94,7 @@ const deactivateData = Room.filter((cat)=>{ return cat.status == false})
   {/* Table */}
   <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
 
-    <div className="overflow-x-auto">
+    <div className="max-w-full overflow-x-auto">
 
       <table className="w-full min-w-[720px]">
 

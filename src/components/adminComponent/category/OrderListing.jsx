@@ -62,7 +62,7 @@ export default function OrderListing() {
   );
 
   return (
-    <div className="min-h-screen bg-slate-100 p-3 sm:p-6">
+    <div className="min-h-screen w-full max-w-full min-w-0 bg-slate-100 p-3 sm:p-6">
       {/* Header */}
       <div className="mb-6 sm:mb-8 flex flex-col gap-3 sm:gap-5 md:flex-row md:items-center md:justify-between">
         <div>
@@ -76,7 +76,7 @@ export default function OrderListing() {
       </div>
 
       {/* Stats — always one line, even on mobile */}
-      <div className="mb-6 sm:mb-8 grid grid-cols-3 gap-2 sm:gap-6">
+      <div className="mb-6 grid grid-cols-1 gap-3 sm:mb-8 sm:grid-cols-3 sm:gap-6">
         <div className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-3 sm:p-6 shadow-sm min-w-0">
           <div className="flex items-center justify-between">
             <p className="truncate text-xs sm:text-sm text-slate-500">
@@ -115,7 +115,7 @@ export default function OrderListing() {
       </div>
 
       {/* Search */}
-      <div className="mb-6 sm:mb-8 flex flex-col gap-4 rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-3 sm:p-5 shadow-sm md:flex-row md:items-center md:justify-between">
+      <div className="mb-6 flex min-w-0 flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:mb-8 sm:rounded-3xl sm:p-5 md:flex-row md:items-center md:justify-between">
         <div className="relative w-full md:max-w-md">
           <Search
             size={18}
@@ -141,8 +141,8 @@ export default function OrderListing() {
       </div>
 
       {/* Table — horizontal scroll on small screens keeps every column readable */}
-      <div className="overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 bg-white shadow-sm">
-        <div className="overflow-x-auto">
+      <div className="max-w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:rounded-3xl">
+        <div className="max-w-full overflow-x-auto">
           <table className="w-full min-w-[900px]">
             <thead className="bg-slate-50">
               <tr>

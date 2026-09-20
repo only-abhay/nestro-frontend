@@ -65,7 +65,7 @@ export default function Page() {
 };
 
   return (
-    <div className="min-h-screen bg-slate-100 p-3 sm:p-6">
+    <div className="min-h-screen w-full max-w-full min-w-0 bg-slate-100 p-3 sm:p-6">
 
       {/* HEADER */}
       <div className="mb-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">

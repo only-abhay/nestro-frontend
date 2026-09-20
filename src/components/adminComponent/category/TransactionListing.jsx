@@ -74,7 +74,7 @@ export default function TransactionListing() {
   );
 
   return (
-    <div className="min-h-screen bg-slate-100 p-3 sm:p-6">
+    <div className="min-h-screen w-full max-w-full min-w-0 bg-slate-100 p-3 sm:p-6">
       {/* Header */}
 
       <div
@@ -117,7 +117,7 @@ export default function TransactionListing() {
       <div
         className="
         mb-6 sm:mb-8
-        grid grid-cols-3
+        grid grid-cols-1 sm:grid-cols-3
         gap-2 sm:gap-6
       "
       >
@@ -354,7 +354,7 @@ export default function TransactionListing() {
         shadow-sm
       "
       >
-        <div className="overflow-x-auto">
+        <div className="max-w-full overflow-x-auto">
           <table
             className="
             w-full
