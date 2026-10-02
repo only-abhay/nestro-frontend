@@ -20,6 +20,8 @@ export const metadata = {
   description: "Hotel Admin Panel",
 };
 
+export const dynamic = "force-dynamic";
+
 export default function RootLayout({ children }) {
   return (
     <html
