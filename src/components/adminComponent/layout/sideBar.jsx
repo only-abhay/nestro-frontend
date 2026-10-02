@@ -142,7 +142,7 @@ export default function Sidebar() {
           top-0
           left-0
           z-50
-          h-screen
+          h-auto
           bg-[#4B5696]
           text-white
           transition-all
