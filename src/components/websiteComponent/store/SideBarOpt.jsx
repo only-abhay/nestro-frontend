@@ -14,26 +14,20 @@ export default function SideBarOpt({Option , name , querykey}) {
   let CurrentValue = searchParams.get(querykey)?.split(",") || []
   let UpdatedValue = [...CurrentValue]
 
-
-
 if(CurrentValue.includes(value)){
    UpdatedValue = UpdatedValue.filter((d)=> d !== value)
 }else{
   UpdatedValue.push(value)
 }
 if(UpdatedValue.length > 0){
-
 params.set(
 querykey,
 UpdatedValue.join(",")
 );
-
 }
 else{
-
 params.delete(querykey);
 }
-
 router.push(
 `/store?${params.toString()}`, {
   scroll: false,

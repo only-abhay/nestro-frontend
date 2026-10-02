@@ -39,7 +39,6 @@ const cart = createSlice({
   state.cart = state.cart.filter(
     (i) => payload.id !== i.id
   );
-
   state.sale_total = state.cart.reduce(
     (total, item) => total + item.salePrice * item.qty,
     0

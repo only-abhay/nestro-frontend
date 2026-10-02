@@ -3,9 +3,8 @@ import { useSearchParams , useRouter } from 'next/navigation'
 
 export default function PriceRange() {
       const router = useRouter() 
-    
-    const searchParams = useSearchParams()
     const [price, setPrice] = useState({min:"",max:""})
+    const searchParams = useSearchParams()
     let min = searchParams.get("min") || []
     let max = searchParams.get("max") || []
 

@@ -21,16 +21,7 @@ export default function Pagination({ Product }) {
     router.push(`?${Pagesparams.toString()}`, {
       scroll: false,
     });
-
-
   }
-
-
-
-
-
-
-
   return (
     <section className="py-14 px-4 flex flex-col items-center gap-8">
 

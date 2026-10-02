@@ -46,8 +46,8 @@ export function proxy(request) {
       );
 
 
-      // Only Admin allowed
-      if (decoded.role !== "admin") {
+      // Only Admin and Super Admin allowed
+      if (decoded.role !== "admin" || decoded.role !== "superadmin") {
         return NextResponse.redirect(
           new URL("/login", request.url)
         );

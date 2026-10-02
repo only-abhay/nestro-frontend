@@ -3,9 +3,9 @@ import React from 'react'
 import { useSearchParams,useRouter } from 'next/navigation'
 
 export default function Instock() {
-          const router = useRouter() 
+      const router = useRouter() 
     
-        const searchParams = useSearchParams()
+     const searchParams = useSearchParams()
     let stock = searchParams.get("stock") || []
 
 
